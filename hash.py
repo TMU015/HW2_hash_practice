@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 file_path = "hw2_data.txt"
 with open(file_path, "r") as file:
     words = file.read().splitlines()
@@ -16,3 +18,10 @@ for word in word_counts:
 print("不重複的英文字數量:", unique_word_count)
 print("每個英文字的出現次數:")
 print(dict(word_counts))
+
+words = list(word_counts.keys())
+counts = list(word_counts.values())
+
+plt.figure(figsize=(10, 6))
+plt.bar(words, counts)
+plt.show()
